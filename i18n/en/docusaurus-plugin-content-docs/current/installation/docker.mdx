@@ -203,23 +203,19 @@ Replace `127.0.0.1` with the IP address or hostname of the system you're running
 To update to the latest version of evcc, follow this guide:
 
 - Open a Terminal
-
-- Get the latest release of evcc (changing the tag if appropriate):
-
   ```sh
-  docker pull evcc/evcc:latest
+  cd [directory that contains docker-compose.yml of your evcc]
   ```
 
-- Stop and remove the evcc container:
-
+- Get the latest release of evcc
   ```sh
-  docker stop evcc
-  docker rm evcc
-  # or
-  docker-compose down
+  docker-compose pull
   ```
 
-- Restart the container using the appropriate incantation above.
+- Restart the container in case there a new versuion was pulled (former container will just continue to run in case there was no upgrade).
+  ```sh
+  docker-compose up -d
+  ```
 
 ## NAS systems
 
